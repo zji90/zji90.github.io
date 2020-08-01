@@ -43,7 +43,7 @@ $(function() {
         <li><a href="#Research">Research</a></li>
         <li><a href="#Software">Software</a></li>
         <li><a href="#CV">CV</a></li>
-        <li><a href="#Contact">Join</a></li>
+        <li><a href="#Contact">Contact</a></li>
       </ul>
       
       <center><div id="About" class="container">   
@@ -51,112 +51,49 @@ $(function() {
             <p>I am an Assistant Professor in <a href="https://biostat.duke.edu/" target="_blank"> Department of Biostatistics and Bioinformatics</a> at Duke University. <br><br> 
             My primary research interest is developing novel statistical and computational methods for integrating and analyzing big and complex genomic data, especially data from single-cell sequencing. Some examples include the differential analysis of single-cell RNA-sequencing (scRNA-seq) data with multiple samples, joint analysis of paired single-cell RNA and T cell receptor (TCR) sequencing data, pseudotime trajectory inference, and signal recovery for single-cell ATAC-sequencing (scATAC-seq) data. I have been actively applying these methods to various biological and clinical studies, such as immunology and cancer.  <br><br> 
 	</p>	    
-	
-		I am looking for students and postdocs to work on exciting research projects. Please contact me if your are interested. Email: zhicheng.ji@duke.edu
-		
-		
+		<p style="color:blue">I am looking for students and postdocs to work on exciting research projects. Please contact me if your are interested. Email: zhicheng.ji@duke.edu</p>
 		
       </div></center>
-  
-<!--
-<center><div id="Research" class="container">
-<div class="tabs-centre" id="Researchacc">
-      <ul>
-        <li><a href="#Researchsub1">Big Data Genomics</a></li>
-        <li><a href="#Researchsub2">Single-Cell Analysis</a></li>
-	<li><a href="#Researchsub3">Collaborational Work</a></li>
-      </ul>
-
-<br>
-
-  <div id="Researchsub1">
-<br>
-      <img src="images/GSCA.jpg" width="35%" height="30%" style="float: left; margin-right: 1.5em">
-      <h4 style="text-align:left"><u> GSCA: Gene Set Context Analysis </u></h4>
-      <p style="text-align:left">
-      [<a href="https://github.com/zji90/GSCA" target="_blank">Paper</a>]
-      [<a href="https://github.com/zji90/GSCA" target="_blank">Github</a>]
-      [<a href="http://www.bioconductor.org/packages/release/bioc/html/GSCA.html" target="_blank">Bioconductor</a>]
-      [<a href="https://zhiji.shinyapps.io/GSCA/" target="_blank">Launch Online</a>]
-      [<a href="https://www.youtube.com/watch?v=wqv_dmlxdcI" target="_blank">Video Demo</a>]
-      [<a href="http://zji90.github.com/GSCA-presentation" target="_blank">Presentation</a>]
-      <br>
-      GSCA is an open source software package to utilize massive amounts of publicly available gene expression data to make new biological discoveries. Users can interactively visualize transcriptional activities of gene sets in 25,000+ human and mouse samples which represent a broad spectrum of biological contexts. Given one or multiple gene sets, GSCA can query the expression compendium to systematically identify biological contexts associated with highly arbitrary and complex gene set activity patterns. GSCA is a parallel project of GSPA.
-
-</div>
-
-<div id="Researchsub2">
-<br>
-<img src="images/TSCAN.jpg" width="35%" height="30%" style="float: left; margin-right: 1.5em">
-      <h4><u> TSCAN: Tools for Single-Cell ANalysis </u></h4>
-      <p>
-      [<a href="https://github.com/zji90/TSCAN" target="_blank">Github</a>]
-      [<a href="http://www.bioconductor.org/packages/release/bioc/html/TSCAN.html" target="_blank">Bioconductor</a>]
-      [<a href="https://zhiji.shinyapps.io/TSCAN" target="_blank">Launch Online</a>]
-      [<a href="https://www.youtube.com/watch?v=zdcBAVe1GBE" target="_blank">Video Demo</a>]
-      [<a href="http://zji90.github.com/TSCAN-presentation" target="_blank">Presentation</a>]
-      <br>
-      TSCAN provides a variety of functions to explore single-cell RNA-seq data and construct and tune pseudo-time cell ordering using a new algorithm called hierarchical minimum-spanning-tree (MST). Prior biological information such as expressions of marker genes can be easily incorporated to refine the ordering. TSCAN also allows users to quantitatively compare different pseudo time cell orderings given cell sub-population information.  
-     
-<br><br><br><br>
-        <hr>
-
- <img src="images/dropout.png" width="35%" height="35%" style="float: left; margin-right: 1.5em; margin-bottom:10%">
-      <h4 style="text-align:left"><u> Adjusting drop-out events in single-cell RNA-seq data </u></h4>
-      <p style="text-align:left">
-      An empirical Bayesian model is derived to adjust the drop-out events in single-cell RNA-seq data. Non-parametric generalized linear models are used to model the drop-out probabilities for the individual gene and cell. After adjustment, the averaged single-cell expressions show higher correlation with bulk expressions compared to raw single-cell expressions. The adjustment is crucial for downstream analysis like differential analysis and pseudo time reconstruction.
-
-
-</div>
-
-<div id="Researchsub3">
-Chi Van Dang Lab @ Upenn
-<br>
-Andrew Feinberg Lab @ JHU
-<br>
-Loyal Goff Lab @ JHU
-<br>
-Sean Taverna Lab @ JHU
-<br>
-Steven Vokes Lab @ UT Austin
-<br>
-John Wherry Lab @ Upenn
-
-</div>
-
-</div>
-  </div>
-</center>
--->
-
       
       <center><div id="Research" class="container">
 <br>
 <b>1. Methods for analyzing single-cell genomic data</b>
 <br>
 <br>
+Single-cell ATAC-seq signal extraction and enhancement with SCATE [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02075-3" target="_blank">Paper</a>][<a href="https://github.com/zji90/SCATE" target="_blank">Software</a>]
+<br>
+<br>
 TSCAN: Pseudo-time reconstruction and evaluation in single-cell RNA-seq analysis [<a href="http://nar.oxfordjournals.org/content/44/13/e117" target="_blank">Paper</a>][<a href="https://github.com/zji90/TSCAN" target="_blank">Software</a>]
 <br>
 <br>
-SCRAT: Single-cell regulome data analysis [<a href="https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btx315" target="_blank">Paper</a>][<a href="https://github.com/zji90/SCRAT" target="_blank">Software</a>]
+Single-cell regulome data analysis by SCRAT [<a href="https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btx315" target="_blank">Paper</a>][<a href="https://github.com/zji90/SCRAT" target="_blank">Software</a>]
 <br>
 <br>
-SCATE: Single-cell ATAC-seq signal extraction and enhancement [<a href="https://www.biorxiv.org/content/10.1101/795609v1" target="_blank">Paper</a>][<a href="https://github.com/zji90/SCATE" target="_blank">Software</a>]
+Global prediction of chromatin accessibility using small-cell-number and single-cell RNA-seq [<a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz716/5552071" target="_blank">Paper</a>][<a href="https://github.com/WeiqiangZhou/BIRD" target="_blank">Software</a>]
 <br>
 <br>
-STIP: State transition inference prediction [<a href="https://www.cell.com/immunity/fulltext/S1074-7613(19)30409-1" target="_blank">Paper</a>][<a href="https://github.com/zji90/STIP" target="_blank">Software</a>]
+<b>2. Methods for integrating large-scale genomic data</b>
 <br>
 <br>
-BIRD: Global prediction of chromatin accessibility using small-cell-number and single-cell RNA-seq [<a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz716/5552071" target="_blank">Paper</a>][<a href="https://github.com/WeiqiangZhou/BIRD" target="_blank">Software</a>]
+Turning publicly available gene expression data into discoveries using gene set context analysis [<a href="http://nar.oxfordjournals.org/content/44/1/e8" target="_blank">Paper</a>][<a href="https://github.com/zji90/GSCA" target="_blank">Software</a>]
 <br>
 <br>
-<b>2. Methods for analyzing large-scale multi-modal genomic data</b>
+Genome-wide prediction of DNase I hypersensitivity using gene expression [<a href="https://www.nature.com/articles/s41467-017-01188-x" target="_blank">Paper</a>][<a href="https://github.com/WeiqiangZhou/BIRD" target="_blank">Software</a>]
 <br>
 <br>
-GSCA: Gene Set Context Analysis for Turning Publicly Available Gene Expression Data into Discoveries. [<a href="http://nar.oxfordjournals.org/content/44/1/e8" target="_blank">Paper</a>][<a href="https://github.com/zji90/GSCA" target="_blank">Software</a>]
+Global prediction of chromatin accessibility using small-cell-number and single-cell RNA-seq [<a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz716/5552071" target="_blank">Paper</a>][<a href="https://github.com/WeiqiangZhou/BIRD" target="_blank">Software</a>]
 <br>
 <br>
-DynaMO: Dynamic motif occupancy analysis [<a href="https://academic.oup.com/nar/article/46/1/e2/4372507" target="_blank">Paper</a>][<a href="https://github.com/spo111/DynaMO" target="_blank">Software</a>]
+<b>3. Collaborations in immunology, cancer, and developmental biology</b>
+<br>
+<br>
+TCF-1-Centered Transcriptional Network Drives an Effector versus Exhausted CD8 T Cell-Fate Decision [<a href="https://www.cell.com/immunity/fulltext/S1074-7613(19)30409-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS1074761319304091%3Fshowall%3Dtrue" target="_blank">Paper</a>]
+<br>
+<br>
+Compartmental analysis of T cell clonal dynamics as a function of pathologic response to neoadjuvant PD-1 blockade in resectable NSCLC [<a href="https://clincancerres.aacrjournals.org/content/early/2019/11/21/1078-0432.CCR-19-2931" target="_blank">Paper</a>]
+<br>
+<br>
+GLI transcriptional repression regulates tissue-specific enhancer activity in response to Hedgehog signaling [<a href="https://elifesciences.org/articles/50670" target="_blank">Paper</a>]
 <br>
 <br>
 <br>
