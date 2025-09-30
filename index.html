@@ -1,194 +1,216 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Zhicheng Ji's Homepage</title>
+  <meta charset="UTF-8">
+  <title>Zhicheng Ji Lab – Duke University</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
 
-  <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
-  <script src="js/jquery-ui.min.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
-  <link rel="stylesheet" href="css/jquery-ui.css" />
-  <link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #fafafa;
+      line-height: 1.6;
+    }
 
-<script type="text/javascript">
-$(document).ready(function(){
-	$('#table_software').DataTable({
-		"columnDefs": [
-   	 		{ className: "dt-center", "targets": [ 0,1,2,3 ]},  {"width": "35%", "targets": 0 }
-  		],
-		"aaSorting": []
-	});
-	$('#table_statool').DataTable({
-                "columnDefs": [
-                        { className: "dt-center", "targets": [ 0,1,2 ]},  {"width": "35%", "targets": 0 }
-                ],
-                "aaSorting": [], bFilter: false, bInfo: false, bPaginate: false
-        });
-      $('#tabs').tabs({show: 'fade', hide: 'fade'}); 
-});
-$(function() {
-   $( "#Researchacc" ).tabs({ show: 'fade', hide: 'fade', heightStyle: "content" });
-});
-</script>
+    /* --- Header / Title Panel --- */
+    .header {
+      padding: 20px 40px;
+      background-color: #eef4f8;
+      border-bottom: 2px solid #ccdadd;
+    }
+    .header .title {
+      font-size: 28px;   /* smaller font size */
+      font-weight: 700;
+      color: #2b3e50;
+    }
 
+    /* --- Navigation bar --- */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #2b3e50;
+      flex-wrap: wrap;
+    }
+    nav button {
+      color: #eef4f8;
+      padding: 12px 18px;
+      margin: 0 6px;
+      background: none;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    nav button:hover {
+      background-color: #4a5a70;
+    }
+    nav button.active {
+      border-color: #e76f51;
+      background-color: #e76f51;
+      color: white;
+    }
+
+    /* --- Sections --- */
+    section {
+      padding: 40px 30px;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    section h2 {
+      font-size: 26px;
+      color: #2b3e50;
+      border-bottom: 2px solid #ccdadd;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+    }
+
+    /* About PI */
+    .about-content {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .about-content img {
+      width: 200px;
+      object-fit: cover;
+      border-radius: 0; /* plain image */
+    }
+    .about-text {
+      max-width: 750px;
+      line-height: 1.5;
+    }
+
+    /* Buttons under About PI */
+    .about-buttons {
+      margin-top: 20px;
+    }
+    .about-buttons a {
+      display: inline-block;
+      margin-right: 12px;
+      padding: 10px 16px;
+      background-color: #2b3e50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    .about-buttons a:hover {
+      background-color: #4a5a70;
+    }
+  </style>
 </head>
 <body>
 
-<center><h1> Zhicheng Ji </h1></center>
+  <!-- Header / Title Panel -->
+  <header class="header">
+    <div class="title">Zhicheng Ji Lab, Duke University School of Medicine</div>
+  </header>
 
-<div class="tabs-centre" id="tabs">
-      <ul>
-        <li><a href="#About">About</a></li>
-        <li><a href="#Research">Research</a></li>
-        <li><a href="#Software">Software</a></li>
-        <li><a href="#CV">CV</a></li>
-        <li><a href="#Contact">Contact</a></li>
-      </ul>
-      
-      <center><div id="About" class="container">   
-            <img src="images/portrait.jpg" width="30%" style="float:right">
-            <p>I am a tenure-track Assistant Professor in <a href="https://biostat.duke.edu/" target="_blank"> Department of Biostatistics and Bioinformatics</a> at Duke University. <br><br> 
-            My primary research interest is developing novel statistical and computational methods for integrating and analyzing big and complex genomic data, especially data from single-cell sequencing and spatial transcriptomics. Some examples include the differential analysis of single-cell RNA-sequencing (scRNA-seq) data with multiple samples, joint analysis of paired single-cell RNA and T cell receptor (TCR) sequencing data, pseudotime trajectory inference, and signal recovery for single-cell ATAC-sequencing (scATAC-seq) data. I have been actively applying these methods to various biological and clinical studies, such as immunology and cancer.  <br><br> 
-	</p>	    
+  <!-- Navigation Buttons -->
+  <nav>
+    <button id="btn-about" onclick="showSection('about')">About PI</button>
+    <button id="btn-research" onclick="showSection('research')">Research</button>
+    <button id="btn-team" onclick="showSection('team')">Team</button>
+    <button id="btn-teaching" onclick="showSection('teaching')">Teaching</button>
+  </nav>
 
-      </div></center>
-      
-      <center><div id="Research" class="container">
-<br>
-<b>1. Methods for analyzing single-cell genomic data</b>
-<br>
-<br>
-Single-cell ATAC-seq signal extraction and enhancement with SCATE [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02075-3" target="_blank">Paper</a>][<a href="https://github.com/zji90/SCATE" target="_blank">Software</a>]
-<br>
-<br>
-TSCAN: Pseudo-time reconstruction and evaluation in single-cell RNA-seq analysis [<a href="http://nar.oxfordjournals.org/content/44/13/e117" target="_blank">Paper</a>][<a href="https://github.com/zji90/TSCAN" target="_blank">Software</a>]
-<br>
-<br>
-Single-cell regulome data analysis by SCRAT [<a href="https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btx315" target="_blank">Paper</a>][<a href="https://github.com/zji90/SCRAT" target="_blank">Software</a>]
-<br>
-<br>
-Global prediction of chromatin accessibility using small-cell-number and single-cell RNA-seq [<a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz716/5552071" target="_blank">Paper</a>][<a href="https://github.com/WeiqiangZhou/BIRD" target="_blank">Software</a>]
-<br>
-<br>
-<b>2. Methods for integrating large-scale genomic data</b>
-<br>
-<br>
-Turning publicly available gene expression data into discoveries using gene set context analysis [<a href="http://nar.oxfordjournals.org/content/44/1/e8" target="_blank">Paper</a>][<a href="https://github.com/zji90/GSCA" target="_blank">Software</a>]
-<br>
-<br>
-Genome-wide prediction of DNase I hypersensitivity using gene expression [<a href="https://www.nature.com/articles/s41467-017-01188-x" target="_blank">Paper</a>][<a href="https://github.com/WeiqiangZhou/BIRD" target="_blank">Software</a>]
-<br>
-<br>
-Global prediction of chromatin accessibility using small-cell-number and single-cell RNA-seq [<a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz716/5552071" target="_blank">Paper</a>][<a href="https://github.com/WeiqiangZhou/BIRD" target="_blank">Software</a>]
-<br>
-<br>
-<b>3. Collaborations in immunology, cancer, and developmental biology</b>
-<br>
-<br>
-TCF-1-Centered Transcriptional Network Drives an Effector versus Exhausted CD8 T Cell-Fate Decision [<a href="https://www.cell.com/immunity/fulltext/S1074-7613(19)30409-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS1074761319304091%3Fshowall%3Dtrue" target="_blank">Paper</a>]
-<br>
-<br>
-Compartmental analysis of T cell clonal dynamics as a function of pathologic response to neoadjuvant PD-1 blockade in resectable NSCLC [<a href="https://clincancerres.aacrjournals.org/content/early/2019/11/21/1078-0432.CCR-19-2931" target="_blank">Paper</a>]
-<br>
-<br>
-GLI transcriptional repression regulates tissue-specific enhancer activity in response to Hedgehog signaling [<a href="https://elifesciences.org/articles/50670" target="_blank">Paper</a>]
-<br>
-<br>
-<br>
-<a href="https://scholar.google.com/citations?user=Uih8yHsAAAAJ&hl=en" target="_blank">All Publications on Google Scholar</a>
- 
-</div></center>
- 
-      <center><div id="Software" class="container">        
-	<table id="table_software" class="display">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-	<th>Author</th>
-	<th>Availability</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>SCATE: Single-cell ATAC-seq signal extraction and enhancement</td>
-            <td>R Software Package</td>
-        <td>Zhicheng Ji, Hongkai Ji</td>
-        <td><a href="https://github.com/zji90/SCATE" target="_blank">[Github]</a></td>
-        </tr>
-	<tr>
-            <td>TSCAN: Tools for Single-Cell ANalysis</td>
-            <td>R Software Package</td>
-        <td>Zhicheng Ji, Hongkai Ji</td>
-        <td><a href="https://github.com/zji90/TSCAN" target="_blank">[Github]</a>&nbsp<a href="http://www.bioconductor.org/packages/release/bioc/html/TSCAN.html" target="_blank">[Bioconductor]</a>&nbsp<a href="https://zhiji.shinyapps.io/TSCAN/" target="_blank">[Online GUI]</a></td>
-        </tr>
-	<tr>
-            <td>BIRD: Big data regression for predicting DNase I hypersensitivity</td>
-            <td>R Software Package</td>
-        <td>Zhicheng Ji, Hongkai Ji</td>
-        <td><a href="https://github.com/WeiqiangZhou/BIRD" target="_blank">[Github]</a></td>
-        </tr>
-	<tr>
-            <td>SCRAT: Single-Cell Regulome Analysis Tool</td>
-            <td>R Software Package</td>
-        <td>Zhicheng Ji, Weiqiang Zhou, Hongkai Ji</td>
-        <td><a href="https://github.com/zji90/SCRAT" target="_blank">[Github]</a>&nbsp<a href="https://zhiji.shinyapps.io/SCRAT/" target="_blank">[Online GUI]</a></td>
-        </tr>
-	<tr>
-            <td>STIP: State transition inference prediction</td>
-            <td>R Software Package</td>
-        <td>Zhicheng Ji, Hongkai Ji</td>
-        <td><a href="https://github.com/zji90/STIP" target="_blank">[Github]</a></td>
-        </tr>
-        <tr>
-            <td>GSCA: Gene Set Context Analysis</td>
-            <td>R Software Package</td>
-	<td>Zhicheng Ji, Hongkai Ji</td>
-	<td><a href="https://github.com/zji90/GSCA" target="_blank">[Github]</a>&nbsp<a href="http://www.bioconductor.org/packages/release/bioc/html/GSCA.html" target="_blank">[Bioconductor]</a>&nbsp<a href="https://zhiji.shinyapps.io/GSCA/" target="_blank">[Online GUI]</a></td>
-        </tr>
-        <tr>
-            <td>RMRCE: Regularized Maximum Rank Correlation Estimator</td>
-            <td>R Software Package</td>
-        <td>Fang Han, Hongkai Ji, Zhicheng Ji, Honglang Wang</td>
-        <td><a href="https://github.com/zji90/RMRCE" target="_blank">[Github]</a></td>
-        </tr>
-	<tr>
-            <td>SEPA: Single-cell Gene Expression Pattern Analysis</td>
-            <td>R Software Package</td>
-        <td>Zhicheng Ji, Hongkai Ji</td>
-        <td><a href="https://github.com/zji90/SEPA" target="_blank">[Github]</a>&nbsp<a href="http://www.bioconductor.org/packages/release/bioc/html/SEPA.html" target="_blank">[Bioconductor]</a>&nbsp<a href="https://zhiji.shinyapps.io/SEPA/" target="_blank">[Online GUI]</a></td>
-        </tr> 
-    	<tr>
-            <td>GEOsearch: Extendable Search Engine for GEO</td>
-            <td>R Software Package</td>
-        <td>Zhicheng Ji, Hongkai Ji</td>
-        <td><a href="https://github.com/zji90/GEOsearch" target="_blank">[Github]</a>&nbsp<a href="http://www.bioconductor.org/packages/release/bioc/html/GEOsearch.html" target="_blank">[Bioconductor]</a>&nbsp<a href="https://zhiji.shinyapps.io/GEOsearch/" target="_blank">[Online GUI]</a></td>
-        </tr>
-        <tr>
-            <td>Reproducible Interactive Data Exploration Tool</td>
-            <td>Web Application</td>
-        <td>Zhicheng Ji, Hongkai Ji</td>
-        <td><a href="https://zhiji.shinyapps.io/ixplore/" target="_blank">[Online GUI]</a></td>
-        </tr>
-	</tbody>
-</table>
+  <!-- About PI Section -->
+  <section id="about" class="active">
+    <h2>About PI</h2>
+    <div class="about-content">
+      <img src="images/portrait.jpg" alt="Zhicheng Ji">
+      <div class="about-text">
+        <p>
+          Dr. Zhicheng Ji is a tenure-track Assistant Professor in the Department 
+          of Biostatistics and Bioinformatics at Duke University School of Medicine. 
+          He obtained his Ph.D. in Biostatistics and M.S.E. in Computer Science 
+          from Johns Hopkins University in 2020. His research focuses on artificial 
+          intelligence and statistical modeling for single-cell genomics, spatial 
+          genomics, and biomedical imaging, advancing our understanding of cell biology.
+        </p>
+        <div class="about-buttons">
+          <a href="CV.pdf" target="_blank">Download CV</a>
+          <a href="https://github.com/zji90" target="_blank">GitHub</a>
+          <a href="mailto:zhicheng.ji@duke.edu">Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      </div></center>
-      
-      <center><div id="CV" class="container">        
-      <br>
-		<p><a href="https://github.com/zji90/zji90.github.io/raw/master/CV.pdf" target="_blank">Curriculum Vitae</a></p>
- </div></center>
+  <!-- Team Section -->
+  <section id="team">
+    <h2>Team</h2>
+    <ul>
+      <li><strong>Postdoc</strong>: Huifang Ma</li>
+      <li><strong>PhD Students</strong>: Huimin Wang, Haotian Zhuang, Xingyuan Zhang</li>
+      <li><strong>Master's Students</strong>: Jingyun Liu, Beijie Ji</li>
+    </ul>
+  </section>
 
-      <center><div id="Contact" class="container">        
-            <p>Email: <br><a href="mailto:zhicheng.ji@duke.edu">zhicheng.ji@duke.edu</a></p>
-            <p>Github: <br><a href="https://github.com/zji90" target="_blank">https://github.com/zji90</a></p>
-      </div></center>
-    </div> 
+  <!-- Research Section -->
+  <section id="research">
+    <h2>Research</h2>
+    <div class="research-subsection">
+    <h3>Large language model–driven methods for biomedical data science</h3>
+    <p>
+        Assessing GPT-4 for cell type annotation in single-cell RNA-seq analysis. 2024. <em><a href="https://www.nature.com/articles/s41592-024-02235-4" target="_blank">Nature Methods</a></em><br>
+        Comparing large language models and human programmers for generating programming code. 2025. <em><a href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/advs.202412279" target="_blank">Advanced Science</a></em><br>
+    </p>
+  </div>
 
- 
+  <!-- Single-Cell Genomics -->
+  <div class="research-subsection">
+    <h3>Methods for analyzing spatial transcriptomics data and biomedical imaging</h3>
+    <p>
+              Vispro improves imaging analysis for Visium spatial transcriptomics. 2025. <em><a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03648-w" target="_blank">Genome Biology</a></em><br>
+              GeneSegNet: a deep learning framework for cell segmentation by integrating gene expression and imaging. 2023. <em><a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-03054-0" target="_blank">Genome Biology</a></em><br>
+
+    </p>
+  </div>
+
+  <!-- Cell Morphology Analysis -->
+  <div class="research-subsection">
+    <h3>Methods for studying cellular senescence and human aging.</h3>
+    <p>
+                    Single-cell and spatial detection of senescent cells using DeepScence. 2025. <em><a href="https://www.biorxiv.org/content/10.1101/2023.11.21.568150v3" target="_blank">Cell Genomics (In press)</a></em><br>
+
+    </p>
+  </div>
+
+  </section>
+
+  <!-- Teaching Section -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p>
+      BIOSTAT 824 – Case Studies in Biomedical Data Science (2025).  
+      <a href="https://canvas.duke.edu/courses/53123" target="_blank">Course Link</a>
+    </p>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('nav button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById('btn-' + id).classList.add('active');
+    }
+
+    // init
+    document.getElementById('btn-about').classList.add('active');
+  </script>
+
 </body>
 </html>
-
-
