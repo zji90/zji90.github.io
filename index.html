@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Zhicheng Ji Lab – Duke University</title>
+  <title>Zhicheng Ji Lab, Duke University</title>
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap');
 
     body {
       font-family: 'Montserrat', sans-serif;
@@ -15,39 +16,60 @@
       line-height: 1.6;
     }
 
+    /* --- Centered content wrapper --- */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     /* --- Header / Title Panel --- */
     .header {
-      padding: 20px 40px;
       background-color: #eef4f8;
       border-bottom: 2px solid #ccdadd;
     }
+
+    .header .container {
+      padding: 28px 20px;
+    }
+
     .header .title {
-      font-size: 28px;   /* smaller font size */
+      font-size: 30px;
       font-weight: 700;
       color: #2b3e50;
     }
 
     /* --- Navigation bar --- */
     nav {
+      background-color: #2b3e50;
+      padding: 12px 0;
+    }
+
+    nav .container {
       display: flex;
       justify-content: center;
-      background-color: #2b3e50;
       flex-wrap: wrap;
     }
+
     nav button {
       color: #eef4f8;
-      padding: 12px 18px;
-      margin: 0 6px;
+      padding: 18px 28px;
+      margin: 0 10px;
       background: none;
       border: 2px solid transparent;
-      border-radius: 4px;
-      font-weight: 500;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.5px;
       cursor: pointer;
-      transition: background-color 0.3s, border-color 0.3s;
+      transition: background-color 0.3s, border-color 0.3s, transform 0.1s;
     }
+
     nav button:hover {
       background-color: #4a5a70;
+      transform: translateY(-1px);
     }
+
     nav button.active {
       border-color: #e76f51;
       background-color: #e76f51;
@@ -56,44 +78,50 @@
 
     /* --- Sections --- */
     section {
-      padding: 40px 30px;
+      padding: 50px 0;
       display: none;
     }
+
     section.active {
       display: block;
     }
+
     section h2 {
       font-size: 26px;
       color: #2b3e50;
       border-bottom: 2px solid #ccdadd;
       padding-bottom: 10px;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
-    /* About PI */
+    /* --- About PI --- */
     .about-content {
       display: flex;
-      gap: 20px;
+      gap: 30px;
       align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
     }
+
     .about-content img {
       width: 200px;
       object-fit: cover;
-      border-radius: 0; /* plain image */
     }
+
     .about-text {
       max-width: 750px;
-      line-height: 1.5;
     }
 
     /* Buttons under About PI */
     .about-buttons {
       margin-top: 20px;
     }
+
     .about-buttons a {
       display: inline-block;
       margin-right: 12px;
-      padding: 10px 16px;
+      margin-bottom: 10px;
+      padding: 12px 18px;
       background-color: #2b3e50;
       color: white;
       text-decoration: none;
@@ -101,101 +129,124 @@
       font-weight: 500;
       transition: background-color 0.3s;
     }
+
     .about-buttons a:hover {
       background-color: #4a5a70;
     }
+
+    /* --- Research subsections --- */
+    .research-subsection {
+      margin-bottom: 35px;
+    }
+
+    .research-subsection h3 {
+      color: #2b3e50;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- Header / Title Panel -->
+  <!-- Header -->
   <header class="header">
-    <div class="title">Zhicheng Ji Lab, Duke University School of Medicine</div>
+    <div class="container">
+      <div class="title">Zhicheng Ji Lab, Duke University School of Medicine</div>
+    </div>
   </header>
 
-  <!-- Navigation Buttons -->
+  <!-- Navigation -->
   <nav>
-    <button id="btn-about" onclick="showSection('about')">About PI</button>
-    <button id="btn-research" onclick="showSection('research')">Research</button>
-    <button id="btn-team" onclick="showSection('team')">Team</button>
-    <button id="btn-teaching" onclick="showSection('teaching')">Teaching</button>
+    <div class="container">
+      <button id="btn-about" onclick="showSection('about')">About PI</button>
+      <button id="btn-research" onclick="showSection('research')">Research</button>
+      <button id="btn-team" onclick="showSection('team')">Team</button>
+      <button id="btn-teaching" onclick="showSection('teaching')">Teaching</button>
+    </div>
   </nav>
 
-  <!-- About PI Section -->
+  <!-- About PI -->
   <section id="about" class="active">
-    <h2>About PI</h2>
-    <div class="about-content">
-      <img src="images/portrait.jpg" alt="Zhicheng Ji">
-      <div class="about-text">
-        <p>
-          Dr. Zhicheng Ji is a tenure-track Assistant Professor in the Department 
-          of Biostatistics and Bioinformatics at Duke University School of Medicine. 
-          He obtained his Ph.D. in Biostatistics and M.S.E. in Computer Science 
-          from Johns Hopkins University in 2020. His research focuses on artificial 
-          intelligence and statistical modeling for single-cell genomics, spatial 
-          genomics, and biomedical imaging.
-        </p>
-        <div class="about-buttons">
-          <a href="CV.pdf" target="_blank">Download CV</a>
-          <a href="https://github.com/zji90" target="_blank">GitHub</a>
-          <a href="mailto:zhicheng.ji@duke.edu">Email</a>
+    <div class="container">
+      <h2>About PI</h2>
+      <div class="about-content">
+        <img src="images/portrait.jpg" alt="Zhicheng Ji">
+        <div class="about-text">
+          <p>
+Dr. Zhicheng Ji is a tenure-track Assistant Professor in the Department of Biostatistics and Bioinformatics at Duke University School of Medicine. He received his Ph.D. in Biostatistics and M.S.E. in Computer Science from Johns Hopkins University in 2020. His research centers on artificial intelligence and statistical modeling for single-cell and spatial genomics and biomedical imaging, with particular emphasis on large language models, foundation models, and computer vision.
+          </p>
+          <div class="about-buttons">
+            <a href="CV.pdf" target="_blank">Download CV</a>
+            <a href="https://github.com/zji90" target="_blank">GitHub</a>
+            <a href="mailto:zhicheng.ji@duke.edu">Email</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Team Section -->
+  <!-- Team -->
   <section id="team">
-    <h2>Team</h2>
-    <ul>
-      <li><strong>Postdoc</strong>: Huifang Ma</li>
-      <li><strong>PhD Students</strong>: Huimin Wang, Haotian Zhuang, Xingyuan Zhang</li>
-      <li><strong>Master's Students</strong>: Jingyun Liu, Beijie Ji, Changyue (William) Zhao</li>
-    </ul>
+    <div class="container">
+      <h2>Team</h2>
+      <ul>
+        <li><strong>Postdoc</strong>: Huifang Ma</li>
+        <li><strong>PhD Students</strong>: Huimin Wang, Haotian Zhuang, Xingyuan Zhang</li>
+        <li><strong>Master's Students</strong>: Jingyun Liu, Beijie Ji, Changyue (William) Zhao</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Research Section -->
+  <!-- Research -->
   <section id="research">
-    <h2>Research</h2>
-    <div class="research-subsection">
-    <h3>Large language models for biomedical data science</h3>
-    <p>
-        Assessing GPT-4 for cell type annotation in single-cell RNA-seq analysis. 2024. <em><a href="https://www.nature.com/articles/s41592-024-02235-4" target="_blank">Nature Methods</a></em><br>
-        Comparing large language models and human programmers for generating programming code. 2025. <em><a href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/advs.202412279" target="_blank">Advanced Science</a></em><br>
-        Evaluating large language models in biomedical data science challenges through a classroom experiment. 2025. <em><a href="https://www.pnas.org/doi/10.1073/pnas.2521062122" target="_blank">PNAS</a></em><br>
-    </p>
-  </div>
+    <div class="container">
+      <h2>Research</h2>
 
-  <!-- Single-Cell Genomics -->
-  <div class="research-subsection">
-    <h3>Methods for analyzing spatial transcriptomics data and biomedical imaging</h3>
-    <p>
-              PreTSA: computationally efficient modeling of temporal and spatial gene expression patterns. 2026. <em><a href="https://www.biorxiv.org/content/10.1101/2024.03.20.585926v1" target="_blank">Genome Biology (To appear)</a></em><br>
-              Identifying cell-type-specific spatially variable genes with ctSVG. 2025. <em><a href="https://link.springer.com/article/10.1186/s13059-025-03870-6/" target="_blank">Genome Biology</a></em><br>
-              Vispro improves imaging analysis for Visium spatial transcriptomics. 2025. <em><a href="https://link.springer.com/article/10.1186/s13059-025-03648-w" target="_blank">Genome Biology</a></em><br>
-              GeneSegNet: a deep learning framework for cell segmentation by integrating gene expression and imaging. 2023. <em><a href="https://link.springer.com/article/10.1186/s13059-023-03054-0" target="_blank">Genome Biology</a></em><br>
+      <div class="research-subsection">
+        <h3>Large language models for biomedical data science</h3>
+        <p>
+          Assessing GPT-4 for cell type annotation in single-cell RNA-seq analysis. 2024.
+          <em><a href="https://www.nature.com/articles/s41592-024-02235-4" target="_blank">Nature Methods</a></em><br>
+          Comparing large language models and human programmers for generating programming code. 2025.
+          <em><a href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/advs.202412279" target="_blank">Advanced Science</a></em><br>
+          Evaluating large language models in biomedical data science challenges through a classroom experiment. 2025.
+          <em><a href="https://www.pnas.org/doi/10.1073/pnas.2521062122" target="_blank">PNAS</a></em>
+        </p>
+      </div>
 
-    </p>
-  </div>
+      <div class="research-subsection">
+        <h3>Spatial transcriptomics and biomedical imaging</h3>
+        <p>
+          PreTSA: computationally efficient modeling of temporal and spatial gene expression patterns. 2026.
+          <em><a href="https://www.biorxiv.org/content/10.1101/2024.03.20.585926v1" target="_blank">Genome Biology, to appear</a></em><br>
+          Identifying cell-type-specific spatially variable genes with ctSVG. 2025.
+          <em><a href="https://link.springer.com/article/10.1186/s13059-025-03870-6/" target="_blank">Genome Biology</a></em><br>
+          Vispro improves imaging analysis for Visium spatial transcriptomics. 2025.
+          <em><a href="https://link.springer.com/article/10.1186/s13059-025-03648-w" target="_blank">Genome Biology</a></em><br> 
+          GeneSegNet: a deep learning framework for cell segmentation by integrating gene expression and imaging. 2023. <em><a href="https://link.springer.com/article/10.1186/s13059-023-03054-0" target="_blank">Genome Biology</a></em>
+        </p>
+      </div>
 
-  <!-- Cell Morphology Analysis -->
-  <div class="research-subsection">
-    <h3>Methods for studying cellular senescence and human aging</h3>
-    <p>
-                    Single-cell and spatial detection of senescent cells using DeepScence. 2025. <em><a href="https://www.cell.com/cell-genomics/fulltext/S2666-979X(25)00291-5" target="_blank">Cell Genomics</a></em><br>
+      <div class="research-subsection">
+        <h3>Cellular senescence and aging</h3>
+        <p>
+          Single-cell and spatial detection of senescent cells using DeepScence. 2025.
+          <em><a href="https://www.cell.com/cell-genomics/fulltext/S2666-979X(25)00291-5" target="_blank">Cell Genomics</a></em>
+        </p>
+      </div>
 
-    </p>
-  </div>
-
+    </div>
   </section>
 
-  <!-- Teaching Section -->
+  <!-- Teaching -->
   <section id="teaching">
-    <h2>Teaching</h2>
-    <p>
-      BIOSTAT 824 – Case Studies in Biomedical Data Science (2025).  
-      <a href="https://canvas.duke.edu/courses/53123" target="_blank">Course Link</a>
-    </p>
+    <div class="container">
+      <h2>Teaching</h2>
+      <p>
+        BIOSTAT 824, Case Studies in Biomedical Data Science (2025).
+        <a href="https://canvas.duke.edu/courses/53123" target="_blank">Course Link</a>
+      </p>
+    </div>
   </section>
 
   <script>
@@ -211,7 +262,6 @@
       document.getElementById('btn-' + id).classList.add('active');
     }
 
-    // init
     document.getElementById('btn-about').classList.add('active');
   </script>
 
